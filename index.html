@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KTool | Addin Revit</title>
+    <link rel="icon" href="assets/img/logo.svg" />
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-logo">
+            <img src="assets/img/logo.svg" alt="logo" />
+            <h1> LTK - KTool</h1>
+        </div>
+        <nav class="nav-menu">
+            <a href="#">Trang chủ</a>
+            <a href="#">Công cụ</a>
+            <a href="#">Liên hệ</a>
+            <button id="themeToggle" title="Đổi chế độ sáng/tối">🌙</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Bộ công cụ Addin Revit</h2>
+            <!--<p>Web tiện ích tổng hợp, nhanh, gọn và không cần đăng nhập.</p>-->
+        </section>
+
+        <section class="tool-list">
+            <div class="tool-card">
+                <h3>View copy <img src="assets/img/Copy-32.svg" alt="icon"></h3>
+                <p>Duplicate floor plan, cho phép copy các Annotate, giữ nguyên vị trí crop view và cho phép tuỳ chỉnh "Associated Level" .</p>
+                <a href="#" class="btn preview-btn" data-img-src="assets/img/PreViewCopyView.png" data-caption="Xem trước công cụ View Copy">Xem trước</a>
+            </div>
+
+            <div class="tool-card">
+                <h3> Section box check <img src="assets/img/checkvar_32.svg" alt="icon"></h3>
+                <p>Kiểm tra vị trí va chọn trong section box, tự động zoom,Highlight  tới vị trí va chạm; export report danh sách các điểm va chạm.</p>
+                <a href="#" class="btn preview-btn" data-img-src="assets/img/PreSectionboxCheck.png" data-caption="Xem trước công cụ Section box check">Xem trước</a>
+            </div>
+
+            <div class="tool-card">
+                <h3> Match Type Plus <img src="assets/img/MatchType_32.svg" alt="icon"></h3>
+                <p>Sao chép Type và System type sang nhiều đối tượng khác; Reset đối tượng về mặc định</p>
+                <a href="#" class="btn preview-btn" data-img-src="assets/img/PreMatchTypePlus.png" data-caption="Xem trước công cụ Match Type Plus">Xem trước</a>
+            </div>
+
+            <div class="tool-card">
+                <h3> Duplicate Sheet <img src="assets/img/Sheet_32.svg" alt="icon"></h3>
+                <p>Duplicate Sheet với tuỳ chọn tính năng copy view.</p>
+                <a href="#" class="btn preview-btn" data-img-src="assets/img/PreDuplicateSheet.png" data-caption="Xem trước công cụ Duplicate Sheet">Xem trước</a>
+            </div>
+
+            <!--<div class="tool-card">
+                <h3>Align View <img src="assets/img/tool-icon.svg" alt="icon"></h3>
+                <p>Điều chỉnh vị trí view trên nhiều sheet.</p>
+                <a href="#" class="btn">Xem trước</a>
+            </div>-->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 KTool by LaoTamK · <!--Powered by Cloudflare Pages--></p>
+    </footer>
+
+    <!-- ĐÃ THÊM style="display: none;" để đảm bảo modal ẩn ngay lập tức khi tải trang -->
+    <div id="previewModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="image-container">
+                <img id="modalImage" src="" alt="">
+            </div>
+            <p id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>
