@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg-color: #ffffff;
     --text-color: #222;
     --accent: #0078ff;
@@ -26,11 +26,22 @@ body {
     transition: 0.3s;
 }
 
+/* --- Đảm bảo footer luôn ở đáy --- */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1; /* chiếm phần còn lại, đẩy footer xuống đáy */
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 30px;
+    padding: 12px 20px;
     background: var(--card-bg);
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     position: sticky;
@@ -40,12 +51,12 @@ body {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5px;
 }
 
     .nav-logo img {
-        width: 32px;
-        height: 32px;
+        width: 64px;
+        height: 64px;
     }
 
 .nav-menu a {
@@ -76,17 +87,32 @@ body {
 
 .tool-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr); /* 4 thẻ mỗi hàng */
+    column-gap: 40px; /* Khoảng cách giữa các cột */
+    row-gap: 25px; /* Khoảng cách giữa các hàng */
+    justify-content: center; /* Căn giữa toàn bộ grid trong container */
 }
 
+/* --- Thẻ công cụ --- */
 .tool-card {
     background: var(--card-bg);
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     transition: transform 0.2s, box-shadow 0.2s;
+    /* thêm để căn nút xuống đáy */
+    display: flex;
+    flex-direction: column;
 }
+
+    .tool-card p {
+        flex: 1; /* đẩy nút xuống đáy */
+    }
+
+    .tool-card .btn {
+        align-self: flex-start; /* giữ nguyên kích thước nút */
+        margin-top: 12px; /* khoảng cách giữa mô tả và nút */
+    }
 
     .tool-card:hover {
         transform: translateY(-4px);
@@ -102,11 +128,12 @@ body {
     }
 
         .tool-card h3 img {
-            height: 1.5em; /* Kích thước ảnh 1 đã tăng */
+            height: 1.5em;
             margin-left: 0.5em;
             vertical-align: middle;
         }
 
+/* --- Nút chung --- */
 .btn {
     display: inline-block;
     background: var(--accent);
@@ -121,18 +148,8 @@ body {
         background: #005ecb;
     }
 
-.footer {
-    text-align: center;
-    padding: 30px;
-    font-size: 14px;
-    border-top: 1px solid #ddd;
-    color: var(--text-color);
-}
-
-/* --- CSS cho Modal Xem trước (Ảnh 2) --- */
-
+/* --- CSS cho Modal Xem trước --- */
 .modal {
-    /* ĐÃ XÓA display: none; vì đã thêm nó vào style inline trong HTML */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -142,10 +159,8 @@ body {
     overflow: auto;
     background-color: var(--modal-bg);
     transition: background-color 0.3s;
-    /* Căn giữa nội dung */
     justify-content: center;
     align-items: center;
-    /* Dòng display: none/flex được kiểm soát hoàn toàn bằng JS và style inline */
 }
 
 .modal-content {
@@ -179,7 +194,6 @@ body {
     display: block;
     border-radius: 8px;
     max-width: none;
-    /* Ẩn biểu tượng ảnh hỏng */
     font-size: 0;
     line-height: 0;
     border: none;
