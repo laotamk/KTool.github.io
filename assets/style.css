@@ -54,10 +54,10 @@ html, body {
     gap: 0.5px;
 }
 
-    .nav-logo img {
-        width: 64px;
-        height: 64px;
-    }
+/*    .nav-logo img {
+        width: 128px;
+        height: 128px;
+    }*/
 
 .nav-menu a {
     margin: 0 10px;
